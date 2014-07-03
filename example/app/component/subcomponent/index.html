@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<style>
+  body {
+    background: #0f0;
+  }
+</style>
+<script>
+  angular.module('app.subcomponent', [])
+    .directive('subComponent', function(){
+      return {
+        templateUrl: 'subcomponent'
+      }
+    })
+  ;
+</script>
+<script type="text/ng-template" id="subcomponent">
+  <p>This is the sub component directive!</p>
+</script>

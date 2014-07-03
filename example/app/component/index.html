@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<link href="subcomponent" rel="import">
+<style>
+  body {
+    background: #ff0;
+  }
+</style>
+<script>
+  angular.module('app.component', ['app.subcomponent', 'ngRoute'])
+    .config(function($routeProvider, $locationProvider) {
+      $routeProvider
+       .when('/', {
+        templateUrl: 'component',
+        controller: 'ComponentCtrl',
+      });
+    })
+    .controller('ComponentCtrl', function($scope){
+      $scope.greeting = 'Welcome to the first component!';
+    })
+  ;
+</script>
+<script type="text/ng-template" id="component">
+  {{greeting}}
+  <div sub-component></div>
+</script>
