@@ -7,7 +7,7 @@ angular.module('templateImport', [])
       link = links.shift();
       
       if(link.import){
-        var templates = [].slice.call(link.import.querySelectorAll('script[type="text/ng-template"]'));
+        var templates = [].slice.call(link.import.querySelectorAll('script[type="text/ng-template"], template'));
         
         while(templates.length){
           template = templates.shift();
