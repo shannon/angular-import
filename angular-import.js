@@ -11,7 +11,7 @@ angular.module('templateImport', [])
         
         while(templates.length){
           template = templates.shift();
-          $templateCache.put(template.id, template.innerHTML);
+          $templateCache.put(template.id, template.innerHTML.trim());
         }
         
         links.push.apply(links, link.import.querySelectorAll('link[rel=import]'));
