@@ -1,4 +1,4 @@
-angular.module('app', ['app.component', 'templateImport', 'ngRoute'])
+angular.module('app', ['app.component', 'ngImport', 'ngRoute'])
   .controller('AppCtrl', function($scope) {
       
   })

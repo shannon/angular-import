@@ -1,0 +1,22 @@
+{
+  "name": "angular-import",
+  "version": "0.0.0",
+  "description": "Angular HTML Imports",
+  "main": "angular-import.js",
+  "scripts": {
+    "preversion": "node_modules/uglify-js/bin/uglifyjs --compress -- angular-import.js >> angular-import.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shannonmpoole/angular-import"
+  },
+  "author": "Shannon Poole",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shannonmpoole/angular-import/issues"
+  },
+  "homepage": "https://github.com/shannonmpoole/angular-import",
+  "devDependencies": {
+    "uglify-js": "^2.4.23"
+  }
+}

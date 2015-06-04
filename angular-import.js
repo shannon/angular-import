@@ -1,21 +1,29 @@
-angular.module('templateImport', [])
-  .run(function($templateCache){
-    var links = [].slice.call(document.querySelectorAll('link[rel=import]'));
-    var link, template;
-    var templates = [].slice.call(document.querySelectorAll('script[type="text/ng-template"], template'));
-    
+angular.module('ngImport', [])
+  .run(['$templateCache', function($templateCache){
+    var tmplSelector = 'script[type="text/ng-template"], template';
+    var linkSelector = 'link[rel=import]';
+  
+    function $$(elem, selector){
+      return [].slice.call(elem.querySelectorAll(selector));  
+    }
+  
+    var links = $$(document, linkSelector);
+    var tmpls = $$(document, tmplSelector);
+  
+    var link, tmpl;
+  
     while(links.length){
       link = links.shift();
       
       if(link.import){
-        templates = templates.concat([].slice.call(link.import.querySelectorAll('script[type="text/ng-template"], template')));
-        links.push.apply(links, link.import.querySelectorAll('link[rel=import]'));
+        tmpls = tmpls.concat($$(link.import, tmplSelector));
+        links = links.concat($$(link.import, linkSelector));
       }
     }
   
-    while(templates.length){
-      template = templates.shift();
-      $templateCache.put(template.id, template.innerHTML.trim());
+    while(tmpls.length){
+      tmpl = tmpls.shift();
+      $templateCache.put(tmpl.id, tmpl.innerHTML.trim());
     }
-  })
+  }])
 ;
