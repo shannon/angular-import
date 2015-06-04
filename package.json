@@ -4,7 +4,7 @@
   "description": "Angular HTML Imports",
   "main": "angular-import.js",
   "scripts": {
-    "preversion": "node_modules/uglify-js/bin/uglifyjs --compress -- angular-import.js >> angular-import.min.js"
+    "minify": "node_modules/uglify-js/bin/uglifyjs --compress -- angular-import.js >> angular-import.min.js"
   },
   "repository": {
     "type": "git",
