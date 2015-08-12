@@ -2,7 +2,7 @@
   "name": "angular-import",
   "version": "0.0.0",
   "description": "Angular HTML Imports",
-  "main": "angular-import.js",
+  "main": "index.js",
   "scripts": {
     "minify": "node_modules/uglify-js/bin/uglifyjs -c -m -- angular-import.js > angular-import.min.js"
   },
